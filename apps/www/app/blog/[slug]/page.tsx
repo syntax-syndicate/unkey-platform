@@ -18,11 +18,12 @@ export const generateStaticParams = async () =>
     slug: post.slug,
   }));
 
-export function generateMetadata({
-  params,
-}: {
-  params: { slug: string };
-}): Metadata {
+export async function generateMetadata(
+  props: {
+    params: Promise<{ slug: string }>;
+  }
+): Promise<Metadata> {
+  const params = await props.params;
   const post = allPosts.find((post) => post.slug === `${params.slug}`);
   if (!post) {
     notFound();
@@ -65,7 +66,8 @@ export function generateMetadata({
   };
 }
 
-const BlogArticleWrapper = async ({ params }: { params: { slug: string } }) => {
+const BlogArticleWrapper = async (props: { params: Promise<{ slug: string }> }) => {
+  const params = await props.params;
   const post = allPosts.find((post) => post.slug === `${params.slug}`) as Post;
   if (!post) {
     notFound();

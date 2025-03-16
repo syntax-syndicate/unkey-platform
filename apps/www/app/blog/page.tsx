@@ -33,10 +33,10 @@ export const metadata = {
 };
 
 type Props = {
-  searchParams?: {
+  searchParams?: Promise<{
     tag?: string;
     page?: number;
-  };
+  }>;
 };
 
 export default async function Blog(props: Props) {
@@ -126,7 +126,7 @@ export default async function Blog(props: Props) {
             </Link>
           </div>
         ) : null}
-        <BlogGrid posts={blogGridPosts} searchParams={props.searchParams} />
+        <BlogGrid posts={blogGridPosts} searchParams={(await props.searchParams)} />
         <CTA />
       </div>
     </>

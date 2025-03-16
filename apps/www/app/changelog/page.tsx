@@ -9,10 +9,10 @@ import { allChangelogs } from "content-collections";
 import { formatDate } from "date-fns";
 import { ArrowRight } from "lucide-react";
 type Props = {
-  searchParams?: {
+  searchParams?: Promise<{
     tag?: string[];
     page?: number;
-  };
+  }>;
 };
 
 export default async function Changelogs(_props: Props) {

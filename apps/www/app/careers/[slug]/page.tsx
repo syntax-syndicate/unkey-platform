@@ -13,9 +13,9 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 
 type Props = {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 };
 
 export const revalidate = 3600; // 1 hour
@@ -28,7 +28,8 @@ export async function generateStaticParams() {
     }));
 }
 export default async function Templates(props: Props) {
-  const career = allCareers.find((c) => c.visible && c.slug === props.params.slug);
+  const career = allCareers.find((c) => c.visible && c.slug === /* @next-codemod-error 'props.params' is accessed without awaiting.*/
+  props.params.slug);
   if (!career) {
     return notFound();
   }
@@ -192,7 +193,8 @@ We value thoughtful, genuine responses over formal applications. The best candid
   );
 }
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+export async function generateMetadata(props: Props): Promise<Metadata> {
+  const params = await props.params;
   // read route params
   const career = allCareers.find((c) => c.slug === params.slug);
 

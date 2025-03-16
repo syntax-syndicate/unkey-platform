@@ -15,9 +15,9 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 
 type Props = {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 };
 
 export const revalidate = 3600; // 1 hour
@@ -28,7 +28,7 @@ export async function generateStaticParams() {
   }));
 }
 export default async function Templates(props: Props) {
-  const template = templates[props.params.slug];
+  const template = templates[(await props.params).slug];
   if (!template) {
     return notFound();
   }
@@ -172,7 +172,8 @@ export default async function Templates(props: Props) {
   );
 }
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+export async function generateMetadata(props: Props): Promise<Metadata> {
+  const params = await props.params;
   // read route params
   const template = templates[params.slug];
 

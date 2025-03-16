@@ -22,11 +22,12 @@ export const generateStaticParams = async () =>
     slug: term.slug,
   }));
 
-export function generateMetadata({
-  params,
-}: {
-  params: { slug: string };
-}): Metadata {
+export async function generateMetadata(
+  props: {
+    params: Promise<{ slug: string }>;
+  }
+): Promise<Metadata> {
+  const params = await props.params;
   const term = allGlossaries.find((term) => term.slug === params.slug);
   if (!term) {
     notFound();
@@ -54,7 +55,8 @@ export function generateMetadata({
   };
 }
 
-const GlossaryTermWrapper = async ({ params }: { params: { slug: string } }) => {
+const GlossaryTermWrapper = async (props: { params: Promise<{ slug: string }> }) => {
+  const params = await props.params;
   const term = allGlossaries.find((term) => term.slug === params.slug);
   if (!term) {
     notFound();
