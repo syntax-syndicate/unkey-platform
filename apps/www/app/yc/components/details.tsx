@@ -1,6 +1,6 @@
 import { CircleDot, MessageSquare, ArrowRightLeft, Flame } from "lucide-react";
 
-export default function DetailsComponent() {
+export const DetailsComponent = () => {
   return (
     <div className="space-y-8">
       <div className="space-y-4">

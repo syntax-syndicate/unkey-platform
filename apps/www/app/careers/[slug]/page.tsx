@@ -28,8 +28,8 @@ export async function generateStaticParams() {
     }));
 }
 export default async function Templates(props: Props) {
-  const career = allCareers.find((c) => c.visible && c.slug === /* @next-codemod-error 'props.params' is accessed without awaiting.*/
-  props.params.slug);
+  const params = await props.params;
+  const career = allCareers.find((c) => c.visible && c.slug === params.slug);
   if (!career) {
     return notFound();
   }

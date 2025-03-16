@@ -1,6 +1,6 @@
 import type React from "react";
 import { ContactForm } from "./components/contactForm";
-import DetailsComponent from "./components/details";
+import {DetailsComponent} from "./components/details";
 
 export default function UnkeyYCPage() {
   return (
