@@ -41,27 +41,37 @@ const alertVariants = cva("relative rounded-2xl p-6 text-left", {
 });
 // TODO: Colors are still to light. Not sure if gradient is correct.
 // TODO: Border is not showing correctly
-const Alert = React.forwardRef<
-  HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement> & VariantProps<typeof alertVariants>
->(({ className, variant, ...props }, ref) => (
-  <div className={cn(className)}>
-    <div className={cn(alertVariants({ backgroundVariants: variant }))}>
-      <div ref={ref} role="alert" className={cn(alertVariants({ variant }))} {...props} />
-    </div>
+const Alert = (
+  {
+    ref,
+    className,
+    variant,
+    ...props
+  }: React.HTMLAttributes<HTMLDivElement> & {
+    ref?: React.RefObject<HTMLDivElement>;
+    variant?: VariantProps<typeof alertVariants>['variant'];
+  }
+) => (<div className={cn(className)}>
+  <div className={cn(alertVariants({ backgroundVariants: variant }))}>
+    <div ref={ref} role="alert" className={cn(alertVariants({ variant }))} {...props} />
   </div>
-));
+</div>);
 Alert.displayName = "Alert";
 
-const AlertDescription = React.forwardRef<
-  HTMLParagraphElement,
-  React.HTMLAttributes<HTMLParagraphElement> & VariantProps<typeof alertVariants>
->(({ className, variant, ...props }, ref) => (
-  <div className="flex flex-row gap-4">
-    <div className="pr-3 pt-2">{variant ? getSvg(variant) : null}</div>
-    <div ref={ref} className={cn("my-auto", className)} {...props} />
-  </div>
-));
+const AlertDescription = (
+  {
+    ref,
+    className,
+    variant,
+    ...props
+  }: React.HTMLAttributes<HTMLDivElement> & {
+    ref?: React.RefObject<HTMLDivElement>;
+    variant?: VariantProps<typeof alertVariants>['variant'];
+  }
+) => (<div className="flex flex-row gap-4">
+  <div className="pr-3 pt-2">{variant ? getSvg(variant) : null}</div>
+  <div ref={ref} className={cn("my-auto", className)} {...props} />
+</div>);
 AlertDescription.displayName = "AlertDescription";
 
 export { Alert, AlertDescription };

@@ -37,8 +37,6 @@ const pageConfig = {
   ogImage: "https://unkey.com/assets/accelerate/og.png",
 };
 
-export const revalidate = 300;
-
 export const metadata: Metadata = {
   title: {
     default: pageConfig.name,
@@ -215,7 +213,7 @@ export default function AcceleratePage() {
 
         {/* Hero Art */}
         <div className="relative z-0 w-full flex items-center justify-center my-[3vh] mb-[0vh] md:mt-[20vh] md:mb-[10vh] lg:my-0">
-          <div className="-ml-[11.531%] relative w-full aspect-[1252/2000] lg:aspect-[1252/874] pointer-events-none lg:pointer-events-auto">
+          <div className="-ml-[11.531%] relative w-full aspect-1252/2000 lg:aspect-1252/874 pointer-events-none lg:pointer-events-auto">
             {/* Cropper */}
             <div className="absolute inset-[-50%] lg:inset-0 scale-[1.3] lg:scale-100 -translate-x-[4.4%] lg:translate-x-0 [mask-image:linear-gradient(to_bottom,black_50%,transparent_80%)] lg:[mask-image:none]">
               <RiveAccelerate day={dayNumber} />
@@ -251,7 +249,7 @@ export default function AcceleratePage() {
             // TODO: Componentize
             <div
               key={day.weekday}
-              className="relative flex flex-col lg:flex-row gap-10 lg:gap-24 items-center pb-10 lg:pb-20 border-b-[1px] border-white/10 [&:not(:first-child)]:mt-20 opacity-0 animate-fade-in [animation-delay:4s]"
+              className="relative flex flex-col lg:flex-row gap-10 lg:gap-24 items-center pb-10 lg:pb-20 border-b-[1px] border-white/10 not-first:mt-20 opacity-0 animate-fade-in [animation-delay:4s]"
             >
               {/* Anchor */}
               <span className="absolute w-px h-px left-0 -top-[100px]" id={`day_${idx + 1}`} />
@@ -347,7 +345,7 @@ export default function AcceleratePage() {
         </div>
 
         {/* Footer Illustration */}
-        <div className="relative mt-24 lg:mt-44 max-w-[800px] w-full aspect-[2/1] overflow-hidden opacity-0 animate-fade-in [animation-delay:6s]">
+        <div className="relative mt-24 lg:mt-44 max-w-[800px] w-full aspect-2/1 overflow-hidden opacity-0 animate-fade-in [animation-delay:6s]">
           <div className={cn("w-full aspect-square", s.footer_illustration)}>
             <AccelerateFooterIllustration />
           </div>

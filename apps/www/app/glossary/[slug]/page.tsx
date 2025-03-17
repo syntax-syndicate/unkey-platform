@@ -147,14 +147,14 @@ const GlossaryTermWrapper = async (props: { params: Promise<{ slug: string }> })
                   className="rounded-lg mb-4 border-[.75px] border-white/20 lg:w-[232px]"
                   terms={allGlossaries}
                 />
-                <div className="flex-grow">
+                <div className="grow">
                   <p className="w-full my-4 font-semibold text-left blog-heading-gradient">Terms</p>
                   <TermsRolodexDesktop
-                    className="flex-grow hidden lg:block"
+                    className="grow hidden lg:block"
                     terms={allGlossaries.map((term) => ({ slug: term.slug, title: term.title }))}
                   />
                   <TermsStepperMobile
-                    className="flex-grow lg:hidden"
+                    className="grow lg:hidden"
                     terms={allGlossaries.map((term) => ({ slug: term.slug, title: term.title }))}
                   />
                 </div>
@@ -165,12 +165,12 @@ const GlossaryTermWrapper = async (props: { params: Promise<{ slug: string }> })
               <div className="prose sm:prose-sm md:prose-md sm:mx-6">
                 <div className="flex items-center gap-5 p-0 m-0 mb-8 text-xl font-medium leading-8">
                   <Link href="/glossary">
-                    <span className="text-transparent bg-gradient-to-r bg-clip-text from-white to-white/60">
+                    <span className="text-transparent bg-linear-to-r bg-clip-text from-white to-white/60">
                       Glossary
                     </span>
                   </Link>
                   <span className="text-white/40">/</span>
-                  <span className="text-transparent capitalize bg-gradient-to-r bg-clip-text from-white to-white/60">
+                  <span className="text-transparent capitalize bg-linear-to-r bg-clip-text from-white to-white/60">
                     {term.term}
                   </span>
                 </div>

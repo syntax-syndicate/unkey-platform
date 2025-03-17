@@ -166,7 +166,7 @@ export const AuditLogs: React.FC<{ className?: string }> = ({ className }) => {
               }}
             >
               Clear
-              <X className="w-4 h-4" />
+              <X className="size-4" />
             </button>
           ) : null}
         </div>
@@ -201,11 +201,11 @@ export const AuditLogs: React.FC<{ className?: string }> = ({ className }) => {
                     </TableCell>
                     <TableCell>
                       <div className="flex items-center">
-                        <div className="flex items-center w-full gap-2 max-sm:m-0 max-sm:gap-1 max-sm:text-xs md:flex-grow">
+                        <div className="flex items-center w-full gap-2 max-sm:m-0 max-sm:gap-1 max-sm:text-xs md:grow">
                           {l.actor.type === "user" ? (
-                            <User className="w-4 h-4" />
+                            <User className="size-4" />
                           ) : (
-                            <KeySquare className="w-4 h-4" />
+                            <KeySquare className="size-4" />
                           )}
                           <span className="font-mono text-xs text-content" suppressHydrationWarning>
                             {l.actor.id}
@@ -235,7 +235,7 @@ const Badge: React.FC<PropsWithChildren<{ className?: string }>> = ({ children, 
   return (
     <div
       className={cn(
-        "border-white/10 border text-xs bg-white/15 px-1 h-4 items-center flex text-white font-mono rounded",
+        "border-white/10 border text-xs bg-white/15 px-1 h-4 items-center flex text-white font-mono rounded-sm",
         className,
       )}
     >
@@ -263,7 +263,7 @@ export const Filter: React.FC<FilterProps> = ({ selected, options, title, setSel
           {selected.length > 0 && (
             <>
               <Separator orientation="vertical" className="h-4 mx-2" />
-              <Badge className="px-1 font-normal rounded-sm lg:hidden">{selected.length}</Badge>
+              <Badge className="px-1 font-normal rounded-xs lg:hidden">{selected.length}</Badge>
               <div className="hidden space-x-1 lg:flex">
                 {selected.length > 2 ? (
                   <Badge>{selected.length} selected</Badge>
@@ -275,11 +275,11 @@ export const Filter: React.FC<FilterProps> = ({ selected, options, title, setSel
               </div>
             </>
           )}
-          <ChevronDown className="w-4 h-4" />
+          <ChevronDown className="size-4" />
         </button>
       </PopoverTrigger>
       <PopoverContent
-        className="w-[400px] p-0 bg-gradient-to-br from-white/10 to-black text-white/60"
+        className="w-[400px] p-0 bg-linear-to-br from-white/10 to-black text-white/60"
         align="start"
       >
         <Command>
@@ -303,7 +303,7 @@ export const Filter: React.FC<FilterProps> = ({ selected, options, title, setSel
                   >
                     <div
                       className={cn(
-                        "mr-2 flex h-4 w-4 items-center justify-center rounded-sm border border-primary",
+                        "mr-2 flex h-4 w-4 items-center justify-center rounded-xs border border-primary",
                         isSelected
                           ? "bg-primary text-primary-foreground"
                           : "opacity-50 [&_svg]:invisible",

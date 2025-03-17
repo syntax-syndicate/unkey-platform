@@ -44,7 +44,7 @@ export async function ChangelogGridItem({ className, changelog }: Props) {
         <p className="my-8 text-lg font-normal">{changelog.description}</p>
       </div>
       {changelog.image && (
-        <Frame className="shadow-sm my-14 2xl:ml-24" size="md">
+        <Frame className="shadow-xs my-14 2xl:ml-24" size="md">
           <ImageWithBlur
             src={changelog.image.toString()}
             alt={changelog.title}

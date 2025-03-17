@@ -140,7 +140,7 @@ We value thoughtful, genuine responses over formal applications. The best candid
             href="/careers"
             className="flex items-center gap-1 text-sm duration-200 text-white/60 hover:text-white/80"
           >
-            <ArrowLeft className="w-4 h-4" /> Back
+            <ArrowLeft className="size-4" /> Back
           </Link>
           <div className="">
             <h2 className="text-5xl text-white font-medium tracking-tight leading-[56px] md:w-2/3 xl:w-full text-balance">

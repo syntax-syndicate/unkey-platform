@@ -1,7 +1,8 @@
 import type { Config } from "tailwindcss";
 import defaultTheme from "@unkey/ui/tailwind.config";
+
 const config = {
-  darkMode: ["class"],
+  darkMode: "class",
   content: [
     "./pages/**/*.{ts,tsx}",
     "./components/**/*.{ts,tsx}",
@@ -11,7 +12,7 @@ const config = {
     "../../internal/icons/src/**/*.tsx",
   ],
   prefix: "",
-  theme: merge(defaultTheme.theme, {
+  theme: merge(defaultTheme.theme!, {
     extend: {
       container: {
         padding: {

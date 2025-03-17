@@ -360,7 +360,7 @@ export default async function Page() {
                   );
                 })}
               </div>
-              <div className="w-full h-[1px] bg-gradient-to-r from-black to-black via-white/40 mt-[100px] lg:mt-[80px]" />
+              <div className="w-full h-[1px] bg-linear-to-r from-black to-black via-white/40 mt-[100px] lg:mt-[80px]" />
               <SectionTitle
                 className="mt-[100px] lg:mt-[100px]"
                 align="center"
@@ -399,7 +399,7 @@ function PhotoLabel({ text, className }: { text: string; className: string }) {
     <div
       className={cn(
         className,
-        "bg-gradient-to-r from-black/70 to-black/40 px-4 py-1.5 rounded-[6px] backdrop-blur-md border-[0.75px] border-white/20 min-w-[140px] flex justify-center",
+        "bg-linear-to-r from-black/70 to-black/40 px-4 py-1.5 rounded-[6px] backdrop-blur-md border-[0.75px] border-white/20 min-w-[140px] flex justify-center",
       )}
     >
       <p className="text-xs text-white">{text}</p>

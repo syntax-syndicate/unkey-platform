@@ -93,6 +93,7 @@ export function MDX({ code }: MDXProps) {
   const Component = useMDXComponent(code);
   return (
     <Component
+      // @ts-ignore
       components={{
         ...MdxComponents,
       }}

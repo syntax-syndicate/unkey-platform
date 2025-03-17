@@ -26,7 +26,7 @@ export function PageIntro({
         <RainbowDarkButton
           label="Submit your template"
           IconRight={ArrowRight}
-          className="mx-auto mb-12 hover:shadow-md hover:scale-[1.01] flex-shrink-0  sm:mt-12 md:mt-20 lg:mt-32 bg-black"
+          className="mx-auto mb-12 hover:shadow-md hover:scale-[1.01] shrink-0  sm:mt-12 md:mt-20 lg:mt-32 bg-black"
         />
       </Link>
       <h1>

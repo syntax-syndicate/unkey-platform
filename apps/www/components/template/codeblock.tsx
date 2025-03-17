@@ -27,7 +27,7 @@ export function CodeBlock(props: any) {
   return (
     <div
       className={cn(
-        "flex flex-col bg-gradient-to-t from-[rgba(255,255,255,0.1)] to-[rgba(255,255,255,0.07)] rounded-[20px] border-[.5px] border-[rgba(255,255,255,0.1)]",
+        "flex flex-col bg-linear-to-t from-[rgba(255,255,255,0.1)] to-[rgba(255,255,255,0.07)] rounded-[20px] border-[.5px] border-[rgba(255,255,255,0.1)]",
         props.className,
       )}
     >

@@ -5,8 +5,6 @@ import { cn } from "@/lib/utils";
 import { AvatarImage } from "@radix-ui/react-avatar";
 import { Avatar, AvatarFallback } from "../../components/ui/avatar";
 
-//Todo: Add ability to have multiple authors
-
 type BlogAuthorsProps = {
   author: Author;
   className?: string;

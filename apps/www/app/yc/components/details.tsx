@@ -4,7 +4,7 @@ export const DetailsComponent = () => {
   return (
     <div className="space-y-8">
       <div className="space-y-4">
-        <h1 className="bg-gradient-to-br text-pretty text-transparent bg-gradient-stop bg-clip-text from-white via-white via-30% to-white/30 max-w-sm sm:max-w-none xl:max-w-lg font-medium text-[32px] leading-none sm:text-[56px] md:text-[64px] xl:text-[64px]">
+        <h1 className="bg-linear-to-br text-pretty text-transparent bg-gradient-stop bg-clip-text from-white via-white via-30% to-white/30 max-w-sm sm:max-w-none xl:max-w-lg font-medium text-[32px] leading-none sm:text-[56px] md:text-[64px] xl:text-[64px]">
           One year free for YC W25
         </h1>
         <p className="text-lg text-gray-400">
@@ -17,7 +17,7 @@ export const DetailsComponent = () => {
         {/* Benefit 1 */}
         <div className="space-y-2">
           <div className="flex items-start gap-3">
-            <CircleDot className="h-5 w-5 text-orange-500 mt-0.5 flex-shrink-0" />
+            <CircleDot className="h-5 w-5 text-orange-500 mt-0.5 shrink-0" />
             <span className="font-medium">Pro plan at any scale</span>
           </div>
           <p className="text-gray-400 pl-8">
@@ -29,7 +29,7 @@ export const DetailsComponent = () => {
         {/* Benefit 2 */}
         <div className="space-y-2">
           <div className="flex items-start gap-3">
-            <MessageSquare className="h-5 w-5 text-orange-500 mt-0.5 flex-shrink-0" />
+            <MessageSquare className="h-5 w-5 text-orange-500 mt-0.5 shrink-0" />
             <span className="font-medium">Priority support</span>
           </div>
           <p className="text-gray-400 pl-8">
@@ -41,7 +41,7 @@ export const DetailsComponent = () => {
         {/* Benefit 3 */}
         <div className="space-y-2">
           <div className="flex items-start gap-3">
-            <Flame className="h-5 w-5 text-orange-500 mt-0.5 flex-shrink-0" />
+            <Flame className="h-5 w-5 text-orange-500 mt-0.5 shrink-0" />
             <span className="font-medium">Concierge onboarding</span>
           </div>
           <p className="text-gray-400 pl-8">
@@ -54,7 +54,7 @@ export const DetailsComponent = () => {
         {/* Benefit 4 */}
         <div className="space-y-2">
           <div className="flex items-start gap-3">
-            <ArrowRightLeft className="h-5 w-5 text-orange-500 mt-0.5 flex-shrink-0" />
+            <ArrowRightLeft className="h-5 w-5 text-orange-500 mt-0.5 shrink-0" />
             <span className="font-medium">Migration support</span>
           </div>
           <p className="text-gray-400 pl-8">

@@ -13,9 +13,9 @@ import { MeteorLines } from "./ui/meteorLines";
 export const OpenSource: React.FC = () => {
   return (
     <div className="pt-[00px] flex items-center flex-col md:flex-row relative">
-      <div className="absolute top-[-320px] md:top-[-480px] xl:right-[120px] -z-[10]">
+      <div className="absolute top-[-320px] md:top-[-480px] xl:right-[120px] -z-10">
         {/* TODO: horizontal scroll */}
-        <OssLight className="scale-[2]" />
+        <OssLight className="scale-2" />
         <div className="absolute right-[270px] top-[250px] -z-50">
           <MeteorLines className="ml-2 fade-in-0" delay={2} number={1} />
           <MeteorLines className="ml-10 fade-in-40" number={1} delay={0} />

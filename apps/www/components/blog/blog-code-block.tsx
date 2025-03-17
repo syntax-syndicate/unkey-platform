@@ -15,7 +15,7 @@ import SyntaxHighlighter from "react-syntax-highlighter";
 import darkTheme from "./darkTheme";
 
 const CN_BLOG_CODE_BLOCK =
-  "flex flex-col bg-gradient-to-t from-[rgba(255,255,255,0.1)] to-[rgba(255,255,255,0.07)] rounded-[20px] border-[.5px] border-[rgba(255,255,255,0.1)] not-prose text-[0.8125rem]";
+  "flex flex-col bg-linear-to-t from-[rgba(255,255,255,0.1)] to-[rgba(255,255,255,0.07)] rounded-[20px] border-[.5px] border-[rgba(255,255,255,0.1)] not-prose text-[0.8125rem]";
 export type CodeBlockProps = {
   className: string;
   children: ReactElement<ChildNode>;
@@ -55,10 +55,10 @@ export function BlogCodeBlock({
         className="flex flex-col"
       >
         <div className="flex flex-row border-b-[.5px] border-white/10 p-2">
-          <TabsList className="flex flex-row justify-start w-full gap-4 align-bottom h-fit">
+          <TabsList className="flex flex-row justify-start w-full gap-4 align-bottom h-fit" ref={undefined}>
             {React.Children.map(buttonLabels, (label: string) => {
               return (
-                <TabsTrigger key={label} value={label} className="capitalize text-white/30">
+                <TabsTrigger key={label} value={label} className="capitalize text-white/30" ref={undefined}>
                   {label}
                 </TabsTrigger>
               );

@@ -8,6 +8,7 @@ import type { Metadata } from "next";
 import dynamic from "next/dynamic";
 import "@unkey/ui/css";
 import "./globals.css";
+import { Suspense } from "react";
 
 const PostHogPageView = dynamic(
   () => import("@/providers/posthog/PostHogPageView")
@@ -52,7 +53,7 @@ export default function RootLayout({
     >
       <PHProvider>
         <body className="min-h-screen overflow-x-hidden antialiased bg-black text-pretty">
-          <PostHogPageView />
+          <Suspense fallback={null}><PostHogPageView /></Suspense>
           <div className="relative overflow-x-clip">
             <Navigation />
             {children}

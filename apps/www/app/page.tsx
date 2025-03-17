@@ -57,7 +57,7 @@ export default async function Landing() {
           <Image
             src={mainboard}
             alt="Animated SVG showing computer circuits lighting up"
-            className="absolute inset-x-0 flex  xl:hidden -z-10 scale-[2]"
+            className="absolute inset-x-0 flex  xl:hidden -z-10 scale-2"
             priority
           />
         </div>
@@ -96,7 +96,7 @@ export default async function Landing() {
             </div>
           </Section>
           <div className="relative w-full -z-10 ">
-            <OssLight className="absolute scale-[2] left-[-70px] sm:left-[70px] md:left-[150px] lg:left-[200px] xl:left-[420px] top-[-250px]" />
+            <OssLight className="absolute scale-2 left-[-70px] sm:left-[70px] md:left-[150px] lg:left-[200px] xl:left-[420px] top-[-250px]" />
           </div>
 
           <Section className="mt-16 md:mt-32">
@@ -124,7 +124,7 @@ export default async function Landing() {
               {/* TODO: optimize to avoid fetching svg on mobile */}
               <div
                 aria-hidden
-                className="hidden lg:block pointer-events-none absolute top-[calc(100%-51px)] right-[226px] lg:right-[500px] aspect-[1400/541] w-[1400px]"
+                className="hidden lg:block pointer-events-none absolute top-[calc(100%-51px)] right-[226px] lg:right-[500px] aspect-1400/541 w-[1400px]"
               >
                 <ImageWithBlur
                   src="/images/landing/leveled-up-api-auth-chip-min.svg"

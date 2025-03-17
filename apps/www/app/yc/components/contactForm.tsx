@@ -1,5 +1,5 @@
 "use client";
-import { FormInput, Button, FormTextarea } from "@unkey/ui";
+import { FormInput,Button, FormTextarea } from "@unkey/ui";
 import { formOpts } from "../validator";
 import { useActionState } from "react";
 import { useForm, } from "@tanstack/react-form";
@@ -33,7 +33,7 @@ export const ContactForm = () => {
   const formErrors = useStore(form.store, (formState) => formState.errors ?? []);
 
   return (
-    <div className="p-8 md:p-8 rounded-lg relative bg-black border-0 overflow-hidden before:absolute before:inset-0 before:p-[1px] before:rounded-lg before:bg-gradient-to-r before:from-orange-500 before:via-purple-500 before:to-blue-500 before:-z-10 shadow-[0_0_50px_rgba(249,115,22,0.25)]">
+    <div className="p-8 md:p-8 rounded-lg relative bg-black border-0 overflow-hidden before:absolute before:inset-0 before:p-[1px] before:rounded-lg before:bg-linear-to-r before:from-orange-500 before:via-purple-500 before:to-blue-500 before:-z-10 shadow-[0_0_50px_rgba(249,115,22,0.25)]">
       <div className="h-full">
         <div className="">
           <h2 className="text-2xl font-semibold">Apply now</h2>
@@ -43,7 +43,7 @@ export const ContactForm = () => {
         </div>
 
         <form
-          action={action as never}
+          action={action}
           onSubmit={() => {form.handleSubmit(); if(form.state.isSubmitSuccessful){form.reset();}}}
           className="space-y-6"
         >
@@ -61,8 +61,9 @@ export const ContactForm = () => {
               }}
               children={(field) => {
                 return (
+                  // @ts-expect-error
                   <FormInput
-                    className="dark "
+                    className="dark"
                     label={field.name}
                     placeholder="Bruce Wayne"
                     id={field.name}
@@ -92,6 +93,7 @@ export const ContactForm = () => {
               }}
               children={(field) => {
                 return (
+                  // @ts-expect-error
                   <FormInput
                     className="dark"
                     type="email"
@@ -124,6 +126,7 @@ export const ContactForm = () => {
               }}
               children={(field) => {
                 return (
+                  // @ts-expect-error
                   <FormInput
                     className="dark"
                     placeholder="YCW2025"
@@ -153,6 +156,7 @@ export const ContactForm = () => {
               }}
               children={(field) => {
                 return (
+                  // @ts-expect-error
                   <FormInput
                     className="dark"
                     placeholder="ws_123"
@@ -175,6 +179,7 @@ export const ContactForm = () => {
               name="Migrating From"
               children={(field) => {
                 return (
+                  // @ts-expect-error
                   <FormInput
                     className="dark"
                     placeholder="we are coming from Apigee"
@@ -194,6 +199,7 @@ export const ContactForm = () => {
               name="More Info"
               children={(field) => {
                 return (
+                  // @ts-expect-error
                   <FormTextarea
                     className="dark"
                     id={field.name}
@@ -212,6 +218,7 @@ export const ContactForm = () => {
             <form.Subscribe
               selector={(state) => [state.canSubmit, state.isSubmitting, state.isPristine]}
               children={([canSubmit, isSubmitting, isPristine]) => (
+                // @ts-expect-error
                 <Button
                   size="lg"
                   className="dark w-full bg-orange-500 inset-x-0 bottom-0 "

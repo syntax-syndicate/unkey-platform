@@ -31,7 +31,7 @@ export function CopyButton({ value, className, src, children, ...props }: CopyBu
       aria-label="Copy code snippet"
       type="button"
       className={cn(
-        "relative p-1 text-primary focus:outline-none flex items-center gap-2",
+        "relative p-1 text-primary focus:outline-hidden flex items-center gap-2",
         className,
       )}
       onClick={() => {
@@ -44,9 +44,9 @@ export function CopyButton({ value, className, src, children, ...props }: CopyBu
     >
       <span className="sr-only">Copy</span>
       {copied ? (
-        <CopyCheck className="w-4 h-4 text-white/40" />
+        <CopyCheck className="size-4 text-white/40" />
       ) : (
-        <Copy className="w-4 h-4 text-white/40" />
+        <Copy className="size-4 text-white/40" />
       )}
       {children}
     </button>

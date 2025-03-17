@@ -35,7 +35,7 @@ export function DesktopLogoCloud() {
             <div
               key={String(idx)}
               className={cn(
-                "relative w-[229px] aspect-[229/36]",
+                "relative w-[229px] aspect-229/36",
                 "opacity-0 animate-fade-in-up [animation-delay:var(--animation-delay)]",
               )}
               style={
@@ -74,7 +74,7 @@ export const MobileLogoCloud = () => {
                 className="flex shrink-0 animate-logo-cloud flex-row justify-around gap-6"
               >
                 {logos.map((logo, key) => (
-                  <div key={String(key)} className="relative w-[229px] aspect-[229/36]">
+                  <div key={String(key)} className="relative w-[229px] aspect-229/36">
                     <Image src={logo.url} alt={logo.name} fill />
                   </div>
                 ))}

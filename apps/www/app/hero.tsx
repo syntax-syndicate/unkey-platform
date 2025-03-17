@@ -35,7 +35,7 @@ export const Hero: React.FC = () => {
         <HeroMainSection />
       </motion.div>
 
-      <div className="relative aspect-[600/340] w-full max-w-[600px] mt-16 xl:mt-0">
+      <div className="relative aspect-600/340 w-full max-w-[600px] mt-16 xl:mt-0">
         <Image
           src={mainboard}
           alt="Animated SVG showing computer circuits lighting up"

@@ -60,7 +60,7 @@ export default function Takeaways(props: Pick<Glossary, "term" | "takeaways">) {
                 {props.takeaways.definitionAndStructure.map((item) => (
                   <div key={item.key} className="flex justify-between text-sm">
                     <span className="font-medium text-white/80">{item.key}</span>
-                    <code className="bg-white/10 px-1 py-0.5 rounded tracking-tight text-xs text-white/90">
+                    <code className="bg-white/10 px-1 py-0.5 rounded-sm tracking-tight text-xs text-white/90">
                       {item.value}
                     </code>
                   </div>

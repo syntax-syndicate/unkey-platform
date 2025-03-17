@@ -21,7 +21,7 @@ export default function NotFoundPage() {
               <GridBorder left right overflow />
 
               <div className="relative flex flex-col w-full text-[white]">
-                <span className="relative !leading-[.76] text-8xl lg:text-[200px] font-bold -tracking-[.06em] -ml-[.7%]">
+                <span className="relative leading-[.76]! text-8xl lg:text-[200px] font-bold -tracking-[.06em] -ml-[.7%]">
                   <div
                     aria-hidden
                     className="absolute inset-0 pointer-events-none select-none opacity-10 [mask-image:linear-gradient(to_bottom,black,transparent)]"
@@ -39,7 +39,7 @@ export default function NotFoundPage() {
               <div className="relative flex flex-col w-full text-[white]">
                 <GridBorder top bottom />
 
-                <span className="!leading-[.73] text-6xl lg:text-[7.125rem] font-bold -tracking-[.06em] -ml-1 shadow-2xl">
+                <span className="leading-[.73]! text-6xl lg:text-[7.125rem] font-bold -tracking-[.06em] -ml-1 shadow-2xl">
                   Not found.
                 </span>
               </div>

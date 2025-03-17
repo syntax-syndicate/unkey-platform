@@ -133,7 +133,7 @@ export function HashedKeys() {
           <Key text="sk_TEwCE9AY9BFTq1XJdIO" className={cn("relative left-[-3px]")} />
         </motion.div>
       </AnimatePresence>
-      <div className="line h-[300px] w-[0.75px] bg-gradient-to-b from-black to-black via-white relative z-50" />
+      <div className="line h-[300px] w-[0.75px] bg-linear-to-b from-black to-black via-white relative z-50" />
       <div className="bg-[#080808] hk-radial rounded-lg w-[200px] h-[300px] overflow-hidden pt-8 pl-4 flex relative z-50 select-none">
         <motion.p
           className="text-white/40 break-words whitespace-pre-wrap w-[160px] h-[240px] overflow-hidden font-mono text-sm"
@@ -148,7 +148,7 @@ export function HashedKeys() {
 function Key({ className, text }: { className?: string; text: string }) {
   return (
     <div className={className}>
-      <div className="inline-flex items-center overflow-hidden mx-4 pr-4 h-[36px] text-white font-mono text-sm ratelimits-key-gradient border-[.75px] border-[#ffffff]/20 rounded">
+      <div className="inline-flex items-center overflow-hidden mx-4 pr-4 h-[36px] text-white font-mono text-sm ratelimits-key-gradient border-[.75px] border-[#ffffff]/20 rounded-sm">
         <div className="w-[62px] h-[36px]">
           <svg
             className="ratelimits-key-icon "

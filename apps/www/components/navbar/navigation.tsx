@@ -48,7 +48,7 @@ export function Navigation() {
         backgroundColor: `rgba(0, 0, 0, ${scrollPercent})`,
         borderColor: `rgba(255, 255, 255, ${Math.min(scrollPercent / 5, 0.15)})`,
       }}
-      className="fixed z-[100] top-0 border-b-[.75px] border-white/10 w-full py-3"
+      className="fixed z-100 top-0 border-b-[.75px] border-white/10 w-full py-3"
       variants={containerVariants}
       initial="hidden"
       animate="visible"
@@ -90,14 +90,14 @@ function MobileLinks({ className }: { className?: string }) {
             className="flex items-center justify-end h-8 gap-2 pl-3 py-2 text-sm duration-150 text-white/60 hover:text-white/80"
           >
             Menu
-            <ChevronDown className="w-4 h-4 relative top-[1px]" />
+            <ChevronDown className="size-4 relative top-[1px]" />
           </button>
         </DrawerTrigger>
-        <DrawerContent className="bg-black/90 z-[110]">
+        <DrawerContent className="bg-black/90 z-110">
           <DrawerHeader className="flex justify-center">
             <Logo />
           </DrawerHeader>
-          <div className="relative w-full mx-auto antialiased z-[110]">
+          <div className="relative w-full mx-auto antialiased z-110">
             <ul className="flex flex-col px-8 divide-y divide-white/25">
               <li>
                 <MobileNavLink onClick={() => setIsOpen(false)} href="/" label="Home" />

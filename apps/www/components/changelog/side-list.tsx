@@ -9,7 +9,7 @@ type SideListProps = {
 
 export function SideList({ list, className }: SideListProps) {
   return (
-    <ScrollArea className={cn("h-96 changelog-gradient", className)}>
+    <ScrollArea className={cn("h-96 changelog-gradient", className)} ref={undefined}>
       {list?.map((l) => {
         return (
           <Link

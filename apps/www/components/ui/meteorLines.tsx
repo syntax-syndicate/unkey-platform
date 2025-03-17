@@ -44,12 +44,12 @@ const MeteorLines = ({
           key={idx.toString()}
           className={clsx(
             className,
-            "-z-20 pointer-events-none absolute left-0 top-0 h-[.75px] w-20 rotate-[90deg] opacity-0 animate-meteor rounded-[9999px] bg-gradient-to-r from-white/90 to-transparent shadow-[0_0_0_1px_#ffffff10]",
+            "-z-20 pointer-events-none absolute left-0 top-0 h-[.75px] w-20 rotate-[90deg] opacity-0 animate-meteor rounded-[9999px] bg-linear-to-r from-white/90 to-transparent shadow-[0_0_0_1px_#ffffff10]",
           )}
           style={style}
         >
           {/* Meteor Tail */}
-          <div className="-z-20 pointer-events-none absolute top-1/2 h-[.75px] w-[500px] -translate-y-1/2 bg-gradient-to-r from-white/10 to-transparent" />
+          <div className="-z-20 pointer-events-none absolute top-1/2 h-[.75px] w-[500px] -translate-y-1/2 bg-linear-to-r from-white/10 to-transparent" />
         </span>
       ))}
     </>
@@ -83,12 +83,12 @@ const MeteorLinesAngular = ({
           key={idx.toString()}
           className={clsx(
             className,
-            "pointer-events-none absolute left-1/2 top-0 h-[.75px] w-20 rotate-[300deg] animate-meteorAngle rounded-[9999px] bg-gradient-to-r from-white/90 to-transparent shadow-[0_0_0_1px_#ffffff10]",
+            "pointer-events-none absolute left-1/2 top-0 h-[.75px] w-20 rotate-[300deg] animate-meteorAngle rounded-[9999px] bg-linear-to-r from-white/90 to-transparent shadow-[0_0_0_1px_#ffffff10]",
           )}
           style={style}
         >
           {/* Meteor Tail */}
-          <div className="-z-20 pointer-events-none absolute top-0 h-[.75px] w-[500px] -translate-y-1/2 bg-gradient-to-r from-white/10 to-transparent" />
+          <div className="-z-20 pointer-events-none absolute top-0 h-[.75px] w-[500px] -translate-y-1/2 bg-linear-to-r from-white/10 to-transparent" />
         </span>
       ))}
     </>

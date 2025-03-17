@@ -68,14 +68,14 @@ export default function PricingPage() {
         aria-hidden
         className="absolute -top-[4.5rem] left-1/2 -translate-x-1/2 w-[2679px] h-[540px] -scale-x-100"
       >
-        <div className="absolute -left-[100px] w-[1400px] aspect-[1400/541] [mask-image:radial-gradient(50%_76%_at_92%_28%,_#FFF_0%,_#FFF_30.03%,_rgba(255,_255,_255,_0.00)_100%)]">
+        <div className="absolute -left-[100px] w-[1400px] aspect-1400/541 [mask-image:radial-gradient(50%_76%_at_92%_28%,_#FFF_0%,_#FFF_30.03%,_rgba(255,_255,_255,_0.00)_100%)]">
           <Image
             alt="Visual decoration auth chip"
             src="/images/landing/leveled-up-api-auth-chip-min.svg"
             fill
           />
         </div>
-        <div className="absolute right-0 w-[1400px] aspect-[1400/541] [mask-image:radial-gradient(26%_76%_at_30%_6%,_#FFF_0%,_#FFF_30.03%,_rgba(255,_255,_255,_0.00)_100%)]">
+        <div className="absolute right-0 w-[1400px] aspect-1400/541 [mask-image:radial-gradient(26%_76%_at_30%_6%,_#FFF_0%,_#FFF_30.03%,_rgba(255,_255,_255,_0.00)_100%)]">
           <Image
             alt="Visual decoration auth chip"
             src="/images/landing/leveled-up-api-auth-chip-min.svg"
@@ -89,7 +89,7 @@ export default function PricingPage() {
           Start for free, scale as you go
         </h1>
 
-        {/* <p className="mt-8 bg-gradient-to-br text-transparent bg-gradient-stop bg-clip-text from-white via-white via-40% to-white/30 max-w-lg text-center">
+        {/* <p className="mt-8 bg-linear-to-br text-transparent bg-gradient-stop bg-clip-text from-white via-white via-40% to-white/30 max-w-lg text-center">
           We wanted pricing to be simple and affordable for anyone, so we've created flexible plans
           that don't need an accounting degree to figure out.
         </p>  */}
@@ -102,7 +102,7 @@ export default function PricingPage() {
           <PricingCardHeader
             title="Free Tier"
             description="Everything you need to start!"
-            className="bg-gradient-to-tr from-transparent to-[#ffffff]/10 "
+            className="bg-linear-to-tr from-transparent to-[#ffffff]/10 "
             color={Color.White}
           />
           <Separator />
@@ -155,7 +155,7 @@ export default function PricingPage() {
           <PricingCardHeader
             title="Pro Tier"
             description="Predicatable pricing without surprises."
-            className="bg-gradient-to-tr from-black/50 to-[#FFD600]/10 "
+            className="bg-linear-to-tr from-black/50 to-[#FFD600]/10 "
             color={Color.Yellow}
           />
           <Separator />
@@ -228,14 +228,14 @@ export default function PricingPage() {
                 title="Enterprise Tier"
                 description="Need more support or pricing doesn't work for your business?"
                 color={Color.Purple}
-                className="bg-gradient-to-tr from-transparent to-[#9D72FF]/10 "
+                className="bg-linear-to-tr from-transparent to-[#9D72FF]/10 "
               />
               <PricingCardContent>
                 <Cost dollar="Custom $" />
                 <Link href="mailto:support@unkey.dev?subject=Unkey Enterprise Quote">
-                  <div className="w-full p-px rounded-lg h-10 bg-gradient-to-r from-[#02DEFC] via-[#0239FC] to-[#7002FC] overflow-hidden">
+                  <div className="w-full p-px rounded-lg h-10 bg-linear-to-r from-[#02DEFC] via-[#0239FC] to-[#7002FC] overflow-hidden">
                     <div className="bg-black rounded-[7px] h-full bg-opacity-95 hover:bg-opacity-25 duration-1000">
-                      <div className="flex items-center justify-center w-full h-full bg-gradient-to-tr from-[#02DEFC]/20 via-[#0239FC]/20 to-[#7002FC]/20  rounded-[7px]">
+                      <div className="flex items-center justify-center w-full h-full bg-linear-to-tr from-[#02DEFC]/20 via-[#0239FC]/20 to-[#7002FC]/20  rounded-[7px]">
                         <span className="text-sm font-semibold text-white">Contact Us</span>
                       </div>
                     </div>

@@ -97,7 +97,7 @@ export default async function Templates(props: Props) {
             href="/templates"
             className="flex items-center gap-1 text-sm duration-200 text-white/60 hover:text-white/80"
           >
-            <ArrowLeft className="w-4 h-4" /> Back to Templates
+            <ArrowLeft className="size-4" /> Back to Templates
           </Link>
           <div className="mb-8 sm:mt-16">
             <h2 className="sm:text-[40px] sm:text-5xl font-medium tracking-tight blog-heading-gradient leading-[56px] md:w-2/3 xl:w-full text-balance">
@@ -155,8 +155,8 @@ export default async function Templates(props: Props) {
               </Frame>
             ) : null}
           </div>
-          <ReactMarkdown
-            className="flex flex-col gap-10 mt-16 xl:px-10 sm:mt-20 sm:mx-4"
+          <div className="flex flex-col gap-10 mt-16 xl:px-10 sm:mt-20 sm:mx-4">
+          <ReactMarkdown 
             remarkPlugins={[remarkGfm]}
             //  @ts-ignore
             rehypePlugins={[rehypeRaw]}
@@ -164,6 +164,7 @@ export default async function Templates(props: Props) {
           >
             {readme}
           </ReactMarkdown>
+          </div>
         </div>
       </div>
 

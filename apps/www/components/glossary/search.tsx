@@ -20,22 +20,13 @@ export function FilterableCommand(props: {
 }) {
   const [open, setOpen] = React.useState(false);
   const router = useRouter();
-  const commandRef = React.useRef<HTMLDivElement>(null);
 
   return (
-    <Command className={cn("h-auto [&>div]:border-b-0", props.className)} ref={commandRef}>
+    <Command className={cn("h-auto [&>div]:border-b-0", props.className)}>
       <CommandInput
         placeholder={props.placeholder}
         onFocus={() => setOpen(true)}
-        // The `onBlur` event checks if the new focus target (relatedTarget) is within the Command component:
-        // - If it's not (i.e., clicking outside), it closes the list.
-        // - If it is (i.e., selecting an item), it keeps the list open, allowing the `onSelect` to handle the navigation.
-        onBlur={(event: React.FocusEvent<HTMLInputElement>) => {
-          const relatedTarget = event.relatedTarget as Node | null;
-          if (!commandRef.current?.contains(relatedTarget)) {
-            setOpen(false);
-          }
-        }}
+        onBlur={() => setOpen(false)}
       />
 
       {open && (

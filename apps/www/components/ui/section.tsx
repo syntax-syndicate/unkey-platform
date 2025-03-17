@@ -24,7 +24,7 @@ export const SectionHeader: React.FC<SectionHeaderProps> = ({
       })}
     >
       <span className="font-mono text-sm text-white/50">{tag}</span>
-      <h2 className="bg-gradient-to-r text-transparent bg-clip-text from-white via-white via-40% to-[#4C4C4C] text-6xl font-medium">
+      <h2 className="bg-linear-to-r text-transparent bg-clip-text from-white via-white via-40% to-[#4C4C4C] text-6xl font-medium">
         {title}
       </h2>
 

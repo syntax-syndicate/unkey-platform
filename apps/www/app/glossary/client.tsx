@@ -129,11 +129,11 @@ export function GlossaryClient() {
             <div className="justify-between flex border-b border-white/10 pb-8 mb-8">
               {alphabet.map((letter) =>
                 groupedTerms[letter]?.length > 0 ? (
-                  <Link key={letter} href={`#${letter}`} className="rounded hover:underline">
+                  <Link key={letter} href={`#${letter}`} className="rounded-sm hover:underline">
                     {letter}
                   </Link>
                 ) : (
-                  <span key={letter} className="rounded text-white/30">
+                  <span key={letter} className="rounded-sm text-white/30">
                     {letter}
                   </span>
                 ),
@@ -152,7 +152,7 @@ export function GlossaryClient() {
                           className="flex flex-col items-start justify-between h-full overflow-hidden duration-200 border rounded-xl border-white/10 hover:border-white/20"
                         >
                           <div className="relative w-full h-full">
-                            <div className="p-4 rounded-md space-y-2 bg-gradient-to-br from-[rgb(22,22,22)] to-[rgb(0,0,0)] border-b border-white/10">
+                            <div className="p-4 rounded-md space-y-2 bg-linear-to-br from-[rgb(22,22,22)] to-[rgb(0,0,0)] border-b border-white/10">
                               <div className="p-4 rounded-md space-y-2 ">
                                 <h3 className="text-sm font-semibold flex items-center text-white">
                                   <Zap className="mr-2 h-5 w-5" /> TL;DR

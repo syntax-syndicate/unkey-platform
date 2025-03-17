@@ -326,7 +326,7 @@ export function TemplatesClient() {
               </Accordion>
             </Form>
           </div>
-          <div className="flex-grow block w-full xl:w-3/4">
+          <div className="grow block w-full xl:w-3/4">
             {Object.entries(filteredTemplates).length === 0 ? (
               <div className="animate-in relative fade-in-50 w-full flex min-h-[400px] flex-col items-center justify-center rounded-xl border border-white/60 p-8 text-center">
                 <div className="mx-auto flex max-w-[420px] flex-col items-center justify-center text-center">

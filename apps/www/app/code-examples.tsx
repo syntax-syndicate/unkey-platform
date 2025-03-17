@@ -505,7 +505,7 @@ const languagesList = {
 //   <TabsPrimitive.Content
 //     ref={ref}
 //     className={cn(
-//       "mt-2 ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
+//       "mt-2 ring-offset-background focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
 //       className,
 //     )}
 //     {...props}
@@ -534,20 +534,20 @@ const languages = [
 // TODO extract this automatically from our languages array
 type FrameworkName = (typeof languagesList)[Language][number]["name"];
 
-const LanguageTrigger = React.forwardRef<
-  React.ElementRef<typeof TabsPrimitive.Trigger>,
-  React.ComponentPropsWithoutRef<typeof TabsPrimitive.Trigger>
->(({ className, value, ...props }, ref) => (
-  <TabsPrimitive.Trigger
-    ref={ref}
-    value={value}
-    className={cn(
-      "inline-flex items-center gap-1 justify-center whitespace-nowrap rounded-t-lg px-3  py-1.5 text-sm transition-all hover:text-white/80 disabled:pointer-events-none disabled:opacity-50 bg-gradient-to-t from-black to-black data-[state=active]:from-white/10 border border-b-0 text-white/30 data-[state=active]:text-white border-[#454545] font-light",
-      className,
-    )}
-    {...props}
-  />
-));
+const LanguageTrigger = (
+  {
+    className,
+    value,
+    ...props
+  }: React.ComponentPropsWithoutRef<typeof TabsPrimitive.Trigger>
+) => (<TabsPrimitive.Trigger
+  value={value}
+  className={cn(
+    "inline-flex items-center gap-1 justify-center whitespace-nowrap rounded-t-lg px-3  py-1.5 text-sm transition-all hover:text-white/80 disabled:pointer-events-none disabled:opacity-50 bg-linear-to-t from-black to-black data-[state=active]:from-white/10 border border-b-0 text-white/30 data-[state=active]:text-white border-[#454545] font-light",
+    className,
+  )}
+  {...props}
+/>);
 
 LanguageTrigger.displayName = TabsPrimitive.Trigger.displayName;
 
@@ -601,7 +601,7 @@ export const CodeExamples: React.FC<Props> = ({ className }) => {
           </div>
         </div>
       </SectionTitle>
-      <div className="relative w-full rounded-4xl border-[.75px] border-white/10 bg-gradient-to-b from-[#111111] to-black border-t-[.75px] border-t-white/20">
+      <div className="relative w-full rounded-4xl border-[.75px] border-white/10 bg-linear-to-b from-[#111111] to-black border-t-[.75px] border-t-white/20">
         <div
           aria-hidden
           className="absolute pointer-events-none inset-x-16 h-[432px] bottom-[calc(100%-2rem)] bg-[radial-gradient(94.69%_94.69%_at_50%_100%,rgba(255,255,255,0.20)_0%,rgba(255,255,255,0)_55.45%)]"

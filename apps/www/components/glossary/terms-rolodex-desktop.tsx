@@ -63,10 +63,10 @@ export default function TermsRolodexDesktop({
           })}
           disabled={terms.length <= visibleTerms.length}
         >
-          <ChevronUpIcon className="w-4 h-4" />
+          <ChevronUpIcon className="size-4" />
           <span className="sr-only">Scroll up</span>
         </Button>
-        <div className="overflow-hidden flex-grow">
+        <div className="overflow-hidden grow">
           {visibleTerms.map((term, index) => (
             <Link
               key={`${term.slug}-${index}`}
@@ -96,7 +96,7 @@ export default function TermsRolodexDesktop({
           })}
           disabled={terms.length <= visibleTerms.length}
         >
-          <ChevronDownIcon className="w-4 h-4" />
+          <ChevronDownIcon className="size-4" />
           <span className="sr-only">Scroll down</span>
         </Button>
       </div>

@@ -25,7 +25,7 @@ export const PricingCardHeader: React.FC<{
       )}
     >
       <div>
-        <span className="bg-gradient-to-br text-transparent bg-gradient-stop  bg-clip-text from-white via-white via-30% to-white/30 font-medium ">
+        <span className="bg-linear-to-br text-transparent bg-gradient-stop  bg-clip-text from-white via-white via-30% to-white/30 font-medium ">
           {title}
         </span>
         <p className="mt-4 text-sm text-white/60">{description}</p>
@@ -33,7 +33,7 @@ export const PricingCardHeader: React.FC<{
       {withIcon ? (
         <div
           className={cn(
-            "relative z-30 flex items-center justify-center ring-1 h-14 min-w-14 w-14 duration-150 rounded-xl backdrop-blur rounded-2 overflow-hidden drop-shadow-[0_20px_20px_rgba(256,0,0,1) ]",
+            "relative z-30 flex items-center justify-center ring-1 h-14 min-w-14 w-14 duration-150 rounded-xl backdrop-blur-sm rounded-2 overflow-hidden drop-shadow-[0_20px_20px_rgba(256,0,0,1) ]",
             {
               " ring-white/10 hover:ring-white/25 ": color === Color.White,
               " ring-[#FFD600]/10 hover:ring-[#FFD600]/25": color === Color.Yellow,
@@ -48,7 +48,7 @@ export const PricingCardHeader: React.FC<{
             vy={color === Color.White ? -0.05 : color === Color.Yellow ? -0.1 : -0.15}
           />
           <div
-            className={cn("absolute -top-1  bg-gradient-radial  blur h-6 w-8 ", {
+            className={cn("absolute -top-1  bg-gradient-radial  blur-sm h-6 w-8 ", {
               "from-white/50": color === Color.White,
               "from-[#FFD600]/50": color === Color.Yellow,
               "from-[#9D72FF]/50": color === Color.Purple,
@@ -64,7 +64,7 @@ export const PricingCardHeader: React.FC<{
 export const Cost: React.FC<{ dollar: string; className?: string }> = ({ dollar, className }) => {
   return (
     <div className={cn("flex items-center gap-4", className)}>
-      <span className="text-4xl font-semibold text-transparent bg-gradient-to-br bg-clip-text from-white via-white to-white/30">
+      <span className="text-4xl font-semibold text-transparent bg-linear-to-br bg-clip-text from-white via-white to-white/30">
         {dollar}
       </span>
       <span className=" text-white/60">/ month</span>
@@ -142,10 +142,10 @@ export const PricingCardFooter: React.FC<PropsWithChildren> = ({ children }) => 
 export const Asterisk: React.FC<{ tag: string; label?: string }> = ({ tag, label }) => {
   return (
     <div className="flex items-center gap-2">
-      <span className="flex items-center justify-start w-20 h-6 px-2 text-sm font-semibold text-white rounded bg-white/10">
+      <span className="flex items-center justify-start w-20 h-6 px-2 text-sm font-semibold text-white rounded-sm bg-white/10">
         {tag}
       </span>
-      <span className="flex-grow w-full col-span-1 text-sm text-white/60">{label}</span>
+      <span className="grow w-full col-span-1 text-sm text-white/60">{label}</span>
     </div>
   );
 };
@@ -159,7 +159,7 @@ export const PricingCard: React.FC<PropsWithChildren<{ color: Color; className?:
     <div className={cn("relative h-full overflow-hidden  group/item", className)}>
       <div
         className={cn(
-          "h-full relative bg-neutral-800 rounded-4xl p-px after:absolute after:inset-0 after:rounded-[inherit] after:opacity-0 after:transition-opacity after:duration-500  after:group-hover:opacity-100 after:z-10 overflow-hidden",
+          "h-full relative bg-neutral-800 rounded-4xl p-px after:absolute after:inset-0 after:rounded-[inherit] after:opacity-0 after:transition-opacity after:duration-500  group-hover:after:opacity-100 after:z-10 overflow-hidden",
           // This is pretty annoying, but the only way I found to prevent tailwind from purging the class
           {
             "after:[background:_radial-gradient(250px_circle_at_var(--mouse-x)_var(--mouse-y),#FFD600,transparent)]":

@@ -77,7 +77,7 @@ export function AnalyticsBento() {
         <LightSvg className="absolute hidden md:flex top-[-180px] left-0 lg:left-[300px] z-50 pointer-events-none" />
         <AnalyticsStars className="w-[90px] shrink-0 hidden md:flex" />
         {showApi ? <AnalyticsApiView /> : <AnalyticsWebAppView />}
-        <div className="absolute inset-0 w-full h-full duration-500 pointer-events-none bg-gradient-to-t from-black from-10% via-black/50 to-transparent group-hover:opacity-0 group-hover:backdrop-blur-0" />
+        <div className="absolute inset-0 w-full h-full duration-500 pointer-events-none bg-linear-to-t from-black from-10% via-black/50 to-transparent group-hover:opacity-0 group-hover:backdrop-blur-0" />
         <BentoText
           className={
             showApi ? "group-hover:opacity-0 group-hover:pointer-events-none duration-500" : ""
@@ -719,7 +719,7 @@ function AnalyticsWebAppView() {
                   />
                 </svg>
               </div>
-              <div className="px-3 py-1 ml-4 text-xs font-bold text-black bg-white rounded">
+              <div className="px-3 py-1 ml-4 text-xs font-bold text-black bg-white rounded-sm">
                 Create key
               </div>
             </div>

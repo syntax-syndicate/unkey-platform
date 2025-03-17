@@ -94,7 +94,7 @@ export const ShinyCard: React.FC<PropsWithChildren<ShinyCardProps>> = ({
   return (
     <div
       className={`relative bg-neutral-800 rounded-4xl p-px
-    after:absolute after:inset-0 after:rounded-[inherit] after:opacity-0 after:transition-opacity after:duration-500 after:[background:_radial-gradient(250px_circle_at_var(--mouse-x)_var(--mouse-y),${shine},transparent)] after:group-hover:opacity-100 after:z-10 overflow-hidden ${className}`}
+    after:absolute after:inset-0 after:rounded-[inherit] after:opacity-0 after:transition-opacity after:duration-500 after:[background:_radial-gradient(250px_circle_at_var(--mouse-x)_var(--mouse-y),${shine},transparent)] group-hover:after:opacity-100 after:z-10 overflow-hidden ${className}`}
     >
       {children}
     </div>
@@ -108,7 +108,7 @@ export const WhiteShinyCard: React.FC<PropsWithChildren<ShinyCardProps>> = ({
   return (
     <div
       className={`relative bg-neutral-800 rounded-4xl p-px
-    after:absolute after:inset-0 after:rounded-[inherit] after:opacity-0 after:transition-opacity after:duration-500 after:[background:_radial-gradient(250px_circle_at_var(--mouse-x)_var(--mouse-y),theme(colors.gray.500),transparent)] after:group-hover:opacity-100 after:z-10 overflow-hidden ${className}`}
+    after:absolute after:inset-0 after:rounded-[inherit] after:opacity-0 after:transition-opacity after:duration-500 after:[background:radial-gradient(250px_circle_at_var(--mouse-x)_var(--mouse-y),var(--color-gray-500),transparent)] group-hover:after:opacity-100 after:z-10 overflow-hidden ${className}`}
     >
       {children}
     </div>

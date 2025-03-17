@@ -8,7 +8,7 @@ export const XShareButton = ({ className, url }: { className?: string; url: stri
       <button
         type="button"
         className={cn(
-          "relative p-1 text-primary focus:outline-none flex items-center gap-2",
+          "relative p-1 text-primary focus:outline-hidden flex items-center gap-2",
           className,
         )}
       >

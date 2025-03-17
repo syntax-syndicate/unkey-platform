@@ -145,13 +145,13 @@ const BlogArticleWrapper = async (props: { params: Promise<{ slug: string }> }) 
             <div className="prose sm:prose-sm md:prose-md sm:mx-6">
               <div className="flex items-center gap-5 p-0 m-0 mb-8 text-xl font-medium leading-8">
                 <Link href="/blog">
-                  <span className="text-transparent bg-gradient-to-r bg-clip-text from-white to-white/60 ">
+                  <span className="text-transparent bg-linear-to-r bg-clip-text from-white to-white/60 ">
                     Blog
                   </span>
                 </Link>
                 <span className="text-white/40">/</span>
                 <Link href={`/blog?tag=${post.tags?.at(0)}`}>
-                  <span className="text-transparent capitalize bg-gradient-to-r bg-clip-text from-white to-white/60">
+                  <span className="text-transparent capitalize bg-linear-to-r bg-clip-text from-white to-white/60">
                     {post.tags?.at(0)}
                   </span>
                 </Link>
@@ -237,9 +237,9 @@ const BlogArticleWrapper = async (props: { params: Promise<{ slug: string }> }) 
                         <Link
                           data-level={heading.level}
                           className={cn({
-                            "text-md font-medium mt-4 text-transparent bg-clip-text bg-gradient-to-r from-white  to-white/70 truncate":
+                            "text-md font-medium mt-4 text-transparent bg-clip-text bg-linear-to-r from-white  to-white/70 truncate":
                               heading.level === 1 || heading.level === 2,
-                            "text-sm ml-4 leading-8 text-transparent bg-clip-text bg-gradient-to-r from-white/60  to-white/50 truncate":
+                            "text-sm ml-4 leading-8 text-transparent bg-clip-text bg-linear-to-r from-white/60  to-white/50 truncate":
                               heading.level === 3 || heading.level === 4,
                           })}
                           href={`#${heading.slug}`}

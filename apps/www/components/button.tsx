@@ -30,14 +30,14 @@ export const PrimaryButton: React.FC<Props> = ({
           "relative flex items-center px-4 gap-2 text-sm font-semibold text-black group-hover:bg-white/90 duration-1000 rounded-lg h-10",
           {
             "bg-white": !shiny,
-            "bg-gradient-to-r from-white/80 to-white": shiny,
+            "bg-linear-to-r from-white/80 to-white": shiny,
           },
           className,
         )}
       >
-        {IconLeft ? <IconLeft className="w-4 h-4" /> : null}
+        {IconLeft ? <IconLeft className="size-4" /> : null}
         {label}
-        {IconRight ? <IconRight className="w-4 h-4" /> : null}
+        {IconRight ? <IconRight className="size-4" /> : null}
 
         {shiny && (
           <div
@@ -58,9 +58,9 @@ export const SecondaryButton: React.FC<Props> = ({ className, IconLeft, label, I
         className,
       )}
     >
-      {IconLeft ? <IconLeft className="w-4 h-4" /> : null}
+      {IconLeft ? <IconLeft className="size-4" /> : null}
       {label}
-      {IconRight ? <IconRight className="w-4 h-4" /> : null}
+      {IconRight ? <IconRight className="size-4" /> : null}
     </div>
   );
 };
@@ -76,7 +76,7 @@ export const RainbowDarkButton: React.FC<Props> = ({ className, label, IconRight
       <div className="items-center gap-4 bg-black/90 group-hover:bg-black/70 duration-500 px-4 py-2 text-white rounded-full flex flex-block ">
         <SparkleIcon className="text-white" />
         {label}
-        {IconRight ? <IconRight className="w-4 h-4" /> : null}
+        {IconRight ? <IconRight className="size-4" /> : null}
       </div>
     </div>
   );

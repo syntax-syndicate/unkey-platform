@@ -29,7 +29,7 @@ export function BlogPagination({
 
     if (rangeStart > 1) {
       content.push(
-        <PaginationItem key="1">
+        <PaginationItem key="1" ref={undefined}>
           <Link href={buildPath(1)} prefetch>
             <PaginationLink>1</PaginationLink>
           </Link>
@@ -42,7 +42,7 @@ export function BlogPagination({
 
     for (let i = rangeStart; i <= rangeEnd; i++) {
       content.push(
-        <PaginationItem key={i}>
+        <PaginationItem key={i} ref={undefined}>
           <Link href={buildPath(i)} prefetch>
             <PaginationLink isActive={currentPage === i}>{i}</PaginationLink>
           </Link>
@@ -55,7 +55,7 @@ export function BlogPagination({
         content.push(<PaginationEllipsis key="end-ellipsis" />);
       }
       content.push(
-        <PaginationItem key={numPages}>
+        <PaginationItem key={numPages} ref={undefined}>
           <Link href={buildPath(numPages)} prefetch>
             <PaginationLink>{numPages}</PaginationLink>
           </Link>
@@ -68,8 +68,8 @@ export function BlogPagination({
 
   return (
     <Pagination>
-      <PaginationContent>
-        <PaginationItem>
+      <PaginationContent ref={undefined}>
+        <PaginationItem ref={undefined}>
           {currentPage > 1 ? (
             <Link href={buildPath(Math.max(1, currentPage - 1))} prefetch>
               <PaginationPrevious />
@@ -79,7 +79,7 @@ export function BlogPagination({
           )}
         </PaginationItem>
         <PageButtons />
-        <PaginationItem>
+        <PaginationItem ref={undefined}>
           {currentPage < numPages ? (
             <Link href={buildPath(Math.min(numPages, currentPage + 1))} prefetch>
               <PaginationNext />
