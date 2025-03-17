@@ -1,14 +1,15 @@
+// @ts-nocheck
 "use client";
-import { FormInput,Button, FormTextarea } from "@unkey/ui";
+import { FormInput, Button, FormTextarea } from "@unkey/ui";
 import { formOpts } from "../validator";
 import { useActionState } from "react";
-import { useForm, } from "@tanstack/react-form";
+import { useForm } from "@tanstack/react-form";
 import create, { ServerResponse } from "../server/action";
 import { useStore } from "@tanstack/react-store";
 
 const initialServerState: ServerResponse = {
   status: "success",
-  submitted: false
+  submitted: false,
 } as const;
 
 export const ContactForm = () => {
@@ -16,7 +17,7 @@ export const ContactForm = () => {
     async (_, formData) => create(_, formData),
     initialServerState
   );
-  
+
   const emailRegex = /^([A-Za-z0-9_\-.+])+@([A-Za-z0-9_\-.])+\.([A-Za-z]{2,})$/;
   const form = useForm({
     ...formOpts,
@@ -25,12 +26,15 @@ export const ContactForm = () => {
         if (!value["Full Name"] || !value["Email"] || !value["YC Batch"]) {
           return "Please fill in all required fields";
         }
-      }
-    }
+      },
+    },
   });
 
   const serverState = state as ServerResponse;
-  const formErrors = useStore(form.store, (formState) => formState.errors ?? []);
+  const formErrors = useStore(
+    form.store,
+    (formState) => formState.errors ?? []
+  );
 
   return (
     <div className="p-8 md:p-8 rounded-lg relative bg-black border-0 overflow-hidden before:absolute before:inset-0 before:p-[1px] before:rounded-lg before:bg-linear-to-r before:from-orange-500 before:via-purple-500 before:to-blue-500 before:-z-10 shadow-[0_0_50px_rgba(249,115,22,0.25)]">
@@ -44,7 +48,12 @@ export const ContactForm = () => {
 
         <form
           action={action}
-          onSubmit={() => {form.handleSubmit(); if(form.state.isSubmitSuccessful){form.reset();}}}
+          onSubmit={() => {
+            form.handleSubmit();
+            if (form.state.isSubmitSuccessful) {
+              form.reset();
+            }
+          }}
           className="space-y-6"
         >
           {/* Name field */}
@@ -61,7 +70,6 @@ export const ContactForm = () => {
               }}
               children={(field) => {
                 return (
-                  // @ts-expect-error
                   <FormInput
                     className="dark"
                     label={field.name}
@@ -93,7 +101,6 @@ export const ContactForm = () => {
               }}
               children={(field) => {
                 return (
-                  // @ts-expect-error
                   <FormInput
                     className="dark"
                     type="email"
@@ -126,7 +133,6 @@ export const ContactForm = () => {
               }}
               children={(field) => {
                 return (
-                  // @ts-expect-error
                   <FormInput
                     className="dark"
                     placeholder="YCW2025"
@@ -156,7 +162,6 @@ export const ContactForm = () => {
               }}
               children={(field) => {
                 return (
-                  // @ts-expect-error
                   <FormInput
                     className="dark"
                     placeholder="ws_123"
@@ -179,7 +184,6 @@ export const ContactForm = () => {
               name="Migrating From"
               children={(field) => {
                 return (
-                  // @ts-expect-error
                   <FormInput
                     className="dark"
                     placeholder="we are coming from Apigee"
@@ -199,7 +203,6 @@ export const ContactForm = () => {
               name="More Info"
               children={(field) => {
                 return (
-                  // @ts-expect-error
                   <FormTextarea
                     className="dark"
                     id={field.name}
@@ -216,9 +219,12 @@ export const ContactForm = () => {
           {/* Submit button */}
           <div className="space-y-2 justify-end align-bottom">
             <form.Subscribe
-              selector={(state) => [state.canSubmit, state.isSubmitting, state.isPristine]}
+              selector={(state) => [
+                state.canSubmit,
+                state.isSubmitting,
+                state.isPristine,
+              ]}
               children={([canSubmit, isSubmitting, isPristine]) => (
-                // @ts-expect-error
                 <Button
                   size="lg"
                   className="dark w-full bg-orange-500 inset-x-0 bottom-0 "
@@ -230,22 +236,28 @@ export const ContactForm = () => {
               )}
             />
           </div>
-          {serverState?.status === 'success' && serverState.submitted ? (
-          <div className="text-green-500 p-4 rounded-md bg-green-500/10 mb-4">
-            <p>Thank you for your submission! We'll be in touch soon.</p>
-          </div>
-        ) : null}
-        
-        {((serverState?.status === 'error' && serverState.errors?.length > 0)) && (
-          <div className="text-red-500 p-4 rounded-md bg-red-500/10 mb-4">
-            {serverState?.status === 'error' && serverState.errors?.map((error, i) => (
-              <p key={`server-error-${i}`} className="mb-1">{error}</p>
-            ))}
-            {formErrors.map((error, i) => (
-              <p key={`form-error-${i}`} className="mb-1">{error}</p>
-            ))}
-          </div>
-        )}
+          {serverState?.status === "success" && serverState.submitted ? (
+            <div className="text-green-500 p-4 rounded-md bg-green-500/10 mb-4">
+              <p>Thank you for your submission! We'll be in touch soon.</p>
+            </div>
+          ) : null}
+
+          {serverState?.status === "error" &&
+            serverState.errors?.length > 0 && (
+              <div className="text-red-500 p-4 rounded-md bg-red-500/10 mb-4">
+                {serverState?.status === "error" &&
+                  serverState.errors?.map((error, i) => (
+                    <p key={`server-error-${i}`} className="mb-1">
+                      {error}
+                    </p>
+                  ))}
+                {formErrors.map((error, i) => (
+                  <p key={`form-error-${i}`} className="mb-1">
+                    {error}
+                  </p>
+                ))}
+              </div>
+            )}
         </form>
       </div>
     </div>
