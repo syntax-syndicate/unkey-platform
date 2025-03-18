@@ -1,16 +1,13 @@
-import ReactMarkdown from "react-markdown";
-import rehypeRaw from "rehype-raw";
-import remarkGfm from "remark-gfm";
-
 import { allCareers } from "@/.content-collections/generated";
 import { ChangelogLight } from "@/components/svg/changelog";
-import { TemplateComponents } from "@/components/template/mdx-components";
+
 import { MeteorLinesAngular } from "@/components/ui/meteorLines";
 import { Separator } from "@/components/ui/separator";
 import { ArrowLeft } from "lucide-react";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { MDX } from "@/components/mdx-content";
 
 type Props = {
   params: Promise<{
@@ -173,14 +170,7 @@ We value thoughtful, genuine responses over formal applications. The best candid
           </div>
         </div>
         <div className="flex flex-col w-full mt-8 mb-24 gap-10 xl:px-10 xl:w-2/3 md:mt-16 xl:pl-24 prose-strong:text-white/90 prose-code:text-white/80 prose-code:bg-white/10 prose-code:px-2 prose-code:py-1 prose-code:border-white/20 prose-code:rounded-md">
-          <ReactMarkdown
-            remarkPlugins={[remarkGfm]}
-            //  @ts-ignore
-            rehypePlugins={[rehypeRaw]}
-            components={TemplateComponents}
-          >
-            {content}
-          </ReactMarkdown>
+        <MDX code={career.mdx} />
 
           {/* Let's see what happens, lol */}
           <p className="text-transparent">
