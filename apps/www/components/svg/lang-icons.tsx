@@ -2,7 +2,7 @@ export type LangIconProps = {
   active: boolean;
 };
 
-export const JavaIcon: React.FC<LangIconProps> = ({ active }) => (
+export const JavaIcon = ({ active } : LangIconProps) => (
   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
     <g opacity={active ? 1 : 0.3}>
       <path
@@ -19,7 +19,7 @@ export const JavaIcon: React.FC<LangIconProps> = ({ active }) => (
   </svg>
 );
 
-export const ElixirIcon: React.FC<LangIconProps> = ({ active }) => (
+export const ElixirIcon = ({ active } : LangIconProps) => (
   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path
       opacity={active ? 1 : 0.3}
@@ -31,7 +31,7 @@ export const ElixirIcon: React.FC<LangIconProps> = ({ active }) => (
   </svg>
 );
 
-export const RustIcon: React.FC<LangIconProps> = ({ active }) => (
+export const RustIcon = ({ active } : LangIconProps) => (
   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
     <g opacity={active ? 1 : 0.3}>
       <path
@@ -48,7 +48,7 @@ export const RustIcon: React.FC<LangIconProps> = ({ active }) => (
   </svg>
 );
 
-export const CurlIcon: React.FC<LangIconProps> = ({ active }) => (
+export const CurlIcon = ({ active } : LangIconProps) => (
   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
     <g opacity={active ? 1 : 0.3}>
       <path
@@ -76,7 +76,7 @@ export const CurlIcon: React.FC<LangIconProps> = ({ active }) => (
   </svg>
 );
 
-export const PythonIcon: React.FC<LangIconProps> = ({ active }) => (
+export const PythonIcon  = ({ active } : LangIconProps) => (
   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path
       opacity={active ? 1 : 0.3}
@@ -101,7 +101,7 @@ export const PythonIcon: React.FC<LangIconProps> = ({ active }) => (
   </svg>
 );
 
-export const TSIcon: React.FC<LangIconProps> = ({ active }) => (
+export const TSIcon = ({ active } : LangIconProps) => (
   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
     <g opacity={active ? 1 : 0.3}>
       <path
@@ -122,7 +122,7 @@ export const TSIcon: React.FC<LangIconProps> = ({ active }) => (
   </svg>
 );
 
-export const GoIcon: React.FC<LangIconProps> = ({ active }) => (
+export const GoIcon = ({ active } : LangIconProps) => (
   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path
       opacity={active ? 1 : 0.3}
