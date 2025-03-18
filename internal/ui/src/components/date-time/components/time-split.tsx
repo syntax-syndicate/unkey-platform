@@ -27,9 +27,12 @@ const MAX_VALUES = {
 } as const;
 
 const TimeSplitInput: React.FC<TimeSplitInputProps> = ({ type }) => {
-  const { startTime, endTime, date, onStartTimeChange, onEndTimeChange } = useDateTimeContext();
+  const { startTime, endTime, date, onStartTimeChange, onEndTimeChange } =
+    useDateTimeContext();
   const [focus, setFocus] = useState(false);
-  const [time, setTime] = useState<TimeUnit>(type === "start" ? startTime : endTime);
+  const [time, setTime] = useState<TimeUnit>(
+    type === "start" ? startTime : endTime
+  );
 
   const normalizeTimeUnit = (time: TimeUnit): TimeUnit => ({
     HH: time.HH.padStart(2, "0") || "00",
@@ -38,11 +41,14 @@ const TimeSplitInput: React.FC<TimeSplitInputProps> = ({ type }) => {
   });
 
   const isSameDay = (date1: Date, date2: Date) =>
-    format(new Date(date1), "dd/MM/yyyy") === format(new Date(date2), "dd/MM/yyyy");
+    format(new Date(date1), "dd/MM/yyyy") ===
+    format(new Date(date2), "dd/MM/yyyy");
 
   const compareTimeUnits = (time1: TimeUnit, time2: TimeUnit): number => {
-    const t1 = Number(time1.HH) * 3600 + Number(time1.mm) * 60 + Number(time1.ss);
-    const t2 = Number(time2.HH) * 3600 + Number(time2.mm) * 60 + Number(time2.ss);
+    const t1 =
+      Number(time1.HH) * 3600 + Number(time1.mm) * 60 + Number(time1.ss);
+    const t2 =
+      Number(time2.HH) * 3600 + Number(time2.mm) * 60 + Number(time2.ss);
     return t1 - t2;
   };
 
@@ -55,12 +61,20 @@ const TimeSplitInput: React.FC<TimeSplitInputProps> = ({ type }) => {
     }
     // If this is a start time and it's later than the end time,
     // push the end time forward to match the start time
-    if (type === "start" && endTime && compareTimeUnits(normalizedTime, endTime) > 0) {
+    if (
+      type === "start" &&
+      endTime &&
+      compareTimeUnits(normalizedTime, endTime) > 0
+    ) {
       onEndTimeChange(normalizedTime);
     }
     // If this is an end time and it's earlier than the start time,
     // pull the start time backward to match the end time
-    else if (type === "end" && startTime && compareTimeUnits(normalizedTime, startTime) < 0) {
+    else if (
+      type === "end" &&
+      startTime &&
+      compareTimeUnits(normalizedTime, startTime) < 0
+    ) {
       onStartTimeChange(normalizedTime);
     }
   };
@@ -110,7 +124,9 @@ const TimeSplitInput: React.FC<TimeSplitInputProps> = ({ type }) => {
     text-gray-12 leading-6 tracking-normal font-medium text-[13px]
   `;
 
-  const TimeInput: React.FC<{ field: TimeField; ariaLabel: string }> = (props): JSX.Element => (
+  const TimeInput: React.FC<{ field: TimeField; ariaLabel: string }> = (
+    props
+  ): React.JSX.Element => (
     <input
       type="text"
       value={time[props.field]}
@@ -127,12 +143,14 @@ const TimeSplitInput: React.FC<TimeSplitInputProps> = ({ type }) => {
     <div
       className={cn(
         "flex h-8 w-full items-center rounded rounded-3 border-[1px]  bg-gray-2 text-gray-12",
-        focus ? " border-gray-10" : "border-gray-4",
+        focus ? " border-gray-10" : "border-gray-4"
       )}
     >
       <Clock className="text-gray-9 m-3 " />
       <TimeInput field="HH" ariaLabel="Hours" />
-      <span className="text-gray-12 leading-6 tracking-normal font-medium text-[13px]">:</span>
+      <span className="text-gray-12 leading-6 tracking-normal font-medium text-[13px]">
+        :
+      </span>
       <TimeInput field="mm" ariaLabel="Minutes" />
       <span className="text-gray-12 leading-6 font-medium text-[13px]">:</span>
       <TimeInput field="ss" ariaLabel="Seconds" />
@@ -151,7 +169,7 @@ export const TimeInput: React.FC<TimeInputProps> = ({ type, className }) => {
     <div
       className={cn(
         "w-full h-full flex flex-row items-center justify-center gap-2 mt-1",
-        className,
+        className
       )}
     >
       <TimeSplitInput type="start" />
