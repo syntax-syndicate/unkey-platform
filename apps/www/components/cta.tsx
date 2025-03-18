@@ -4,7 +4,7 @@ import Link from "next/link";
 import type React from "react";
 import { PrimaryButton, SecondaryButton } from "./button";
 
-export const CTA: React.FC<React.ComponentPropsWithoutRef<'div'>> = (props) => {
+export const CTA = () => {
   return (
     <div className="w-full h-full overflow-hidden">
       <div className="relative pb-40 pt-14 ">
