@@ -32,7 +32,6 @@
     "@team-plain/typescript-sdk": "^5.8.0",
     "@unkey/db": "workspace:^",
     "@unkey/icons": "workspace:^",
-    "@unkey/ui": "workspace:^",
     "@vercel/og": "^0.6.5",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",

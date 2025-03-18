@@ -6,7 +6,6 @@ import { GeistMono } from "geist/font/mono";
 import { GeistSans } from "geist/font/sans";
 import type { Metadata } from "next";
 import dynamic from "next/dynamic";
-import "@unkey/ui/css";
 import "./globals.css";
 import { Suspense } from "react";
 
