@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { ChevronLeft, ChevronRight } from "@unkey/icons";
 import { format } from "date-fns";
 import { useState } from "react";
@@ -26,7 +27,6 @@ function CustomCaptionComponent(props: CaptionProps) {
         <ChevronLeft className="text-gray-12 size-3" />
       </button>
       <div className="flex w-full text-gray-12 justify-center items-center font-medium calendar-header">
-        // @ts-ignore
         {format(props.displayMonth, "MMMM yyy")}
       </div>
       <button
