@@ -592,12 +592,12 @@ export const CodeExamples: React.FC<Props> = ({ className }) => {
         </div>
         <div className="mt-10">
           <div className="flex gap-6 pb-14">
-            <Link key="get-started" href="https://app.unkey.com">
+            <a key="get-started" href="https://app.unkey.com">
               <PrimaryButton shiny label="Get Started" IconRight={ChevronRight} />
-            </Link>
-            <Link key="docs" href="/docs">
+            </a>
+            <a key="docs" href="/docs">
               <SecondaryButton label="Visit the docs" IconRight={ChevronRight} />
-            </Link>
+            </a>
           </div>
         </div>
       </SectionTitle>

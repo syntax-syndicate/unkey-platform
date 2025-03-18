@@ -1,5 +1,4 @@
 import type { Config } from "tailwindcss";
-import defaultTheme from "@unkey/ui/tailwind.config";
 
 const config = {
   darkMode: "class",
@@ -12,7 +11,7 @@ const config = {
     "../../internal/icons/src/**/*.tsx",
   ],
   prefix: "",
-  theme: merge(defaultTheme.theme!, {
+  theme: {
     extend: {
       container: {
         padding: {
@@ -148,7 +147,7 @@ const config = {
         },
       },
     },
-  }),
+  },
   plugins: [require("tailwindcss-animate"), require("@tailwindcss/typography")],
 } satisfies Config;
 
