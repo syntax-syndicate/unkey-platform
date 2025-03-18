@@ -1,56 +1,20 @@
 import { CircleInfo, TriangleWarning2 } from "@unkey/icons";
-import { cn } from "@/lib/utils";
-import { type VariantProps, cva } from "class-variance-authority";
-import * as React from "react";
-
-const textareaVariants = cva(
-  "flex min-h-9 w-full rounded-lg text-[13px] leading-5 transition-colors duration-300 disabled:cursor-not-allowed disabled:opacity-50 placeholder:text-gray-7 text-gray-12",
-  {
-    variants: {
-      variant: {
-        default: [
-          "border border-gray-5 hover:border-gray-8 bg-gray-2",
-          "focus:border focus:border-accent-12 focus:ring-4 focus:ring-gray-5 focus-visible:outline-none focus:ring-offset-0",
-        ],
-        success: [
-          "border border-success-9 hover:border-success-10 bg-gray-2",
-          "focus:border-success-8 focus:ring-2 focus:ring-success-2 focus-visible:outline-none",
-        ],
-        warning: [
-          "border border-warning-9 hover:border-warning-10 bg-gray-2",
-          "focus:border-warning-8 focus:ring-2 focus:ring-warning-2 focus-visible:outline-none",
-        ],
-        error: [
-          "border border-error-9 hover:border-error-10 bg-gray-2",
-          "focus:border-error-8 focus:ring-2 focus:ring-error-2 focus-visible:outline-none",
-        ],
-      },
-    },
-    defaultVariants: {
-      variant: "default",
-    },
-  }
-);
+import React from "react";
+import { cn } from "../../lib/utils";
+import { type DocumentedTextareaProps, Textarea, type TextareaProps } from "../textarea";
 
 // Hack to populate fumadocs' AutoTypeTable
-export type DocumentedFormTextareaProps = VariantProps<
-  typeof textareaVariants
-> & {
+export type DocumentedFormTextareaProps = DocumentedTextareaProps & {
   label?: string;
-  description?: string;
+  description?: string | React.ReactNode;
   required?: boolean;
   optional?: boolean;
   error?: string;
-  wrapperClassName?: string;
 };
 
-export type FormTextareaProps = DocumentedFormTextareaProps &
-  React.TextareaHTMLAttributes<HTMLTextAreaElement>;
+export type FormTextareaProps = TextareaProps & DocumentedFormTextareaProps;
 
-export const FormTextarea = React.forwardRef<
-  HTMLTextAreaElement,
-  FormTextareaProps
->(
+export const FormTextarea = React.forwardRef<HTMLTextAreaElement, FormTextareaProps>(
   (
     {
       label,
@@ -61,10 +25,12 @@ export const FormTextarea = React.forwardRef<
       id,
       className,
       variant,
+      leftIcon,
+      rightIcon,
       wrapperClassName,
       ...props
     },
-    ref
+    ref,
   ) => {
     const textareaVariant = error ? "error" : variant;
     const textareaId = id || React.useId();
@@ -72,38 +38,26 @@ export const FormTextarea = React.forwardRef<
     const errorId = `${textareaId}-error`;
 
     return (
-      <fieldset
-        className={cn("flex flex-col gap-1.5 border-0 m-0 p-0", className)}
-      >
+      <fieldset className={cn("flex flex-col gap-1.5 border-0 m-0 p-0", className)}>
         {label && (
           <label
             id={`${textareaId}-label`}
             htmlFor={textareaId}
-            className="text-gray-11 text-[13px] flex items-center gap-2"
+            className="text-gray-11 text-[13px] flex items-center"
           >
             {label}
-            {required && (
-              <span className="text-error-9 ml-1" aria-label="required field">
-                *
-              </span>
-            )}
-            {optional && (
-              <span className="inline-flex items-center rounded border border-grayA-4 text-grayA-11 px-1 py-0.5 text-xs font-sans bg-grayA-3 ">
-                Optional
-              </span>
-            )}
+            {required && <RequiredTag hasError={Boolean(error)} />}
+            {optional && <OptionalTag />}
           </label>
         )}
-        <textarea
+        <Textarea
           ref={ref}
           id={textareaId}
-          className={cn(
-            textareaVariants({ variant: textareaVariant }),
-            "px-3 py-2"
-          )}
-          aria-describedby={
-            error ? errorId : description ? descriptionId : undefined
-          }
+          variant={textareaVariant}
+          leftIcon={leftIcon}
+          rightIcon={rightIcon}
+          wrapperClassName={wrapperClassName}
+          aria-describedby={error ? errorId : description ? descriptionId : undefined}
           aria-invalid={!!error}
           aria-required={required}
           {...props}
@@ -111,15 +65,8 @@ export const FormTextarea = React.forwardRef<
         {(description || error) && (
           <div className="text-[13px] leading-5">
             {error ? (
-              <div
-                id={errorId}
-                role="alert"
-                className="text-error-11 flex gap-2 items-center"
-              >
-                <TriangleWarning2
-                  className="flex-shrink-0"
-                  aria-hidden="true"
-                />
+              <div id={errorId} role="alert" className="text-error-11 flex gap-2 items-center">
+                <TriangleWarning2 className="flex-shrink-0" aria-hidden="true" />
                 <span className="flex-1">{error}</span>
               </div>
             ) : description ? (
@@ -130,8 +77,8 @@ export const FormTextarea = React.forwardRef<
                   variant === "success"
                     ? "text-success-11"
                     : variant === "warning"
-                    ? "text-warning-11"
-                    : ""
+                      ? "text-warning-11"
+                      : "",
                 )}
               >
                 {variant === "warning" ? (
@@ -154,7 +101,44 @@ export const FormTextarea = React.forwardRef<
         )}
       </fieldset>
     );
-  }
+  },
 );
+
+type TagProps = {
+  className?: string;
+};
+
+type RequiredTagProps = TagProps & {
+  hasError?: boolean;
+};
+
+export const OptionalTag = ({ className }: TagProps) => {
+  return (
+    <span
+      className={cn(
+        "inline-flex items-center rounded border border-grayA-4 text-grayA-11 px-1 py-0.5 text-xs font-sans bg-grayA-3 ml-2",
+        className,
+      )}
+    >
+      Optional
+    </span>
+  );
+};
+
+export const RequiredTag = ({ className, hasError }: RequiredTagProps) => {
+  return (
+    <span
+      className={cn(
+        "inline-flex items-center rounded border px-1 py-0.5 text-xs font-sans ml-2",
+        hasError
+          ? "border-error-4 text-error-11 bg-error-3"
+          : "border-warning-4 text-warning-11 bg-warning-3 dark:border-warning-4 dark:text-warning-11 dark:bg-warning-3",
+        className,
+      )}
+    >
+      Required
+    </span>
+  );
+};
 
 FormTextarea.displayName = "FormTextarea";
