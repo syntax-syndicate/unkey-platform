@@ -12,13 +12,13 @@ type Props = {
 };
 
 // TODO: use <button> not <div>
-export const PrimaryButton: React.FC<Props> = ({
+export const PrimaryButton = ({
   className,
   IconLeft,
   label,
   IconRight,
   shiny = false,
-}) => {
+} : Props) => {
   return (
     <div className="relative group/button">
       <div
@@ -50,7 +50,7 @@ export const PrimaryButton: React.FC<Props> = ({
   );
 };
 
-export const SecondaryButton: React.FC<Props> = ({ className, IconLeft, label, IconRight }) => {
+export const SecondaryButton = ({ className, IconLeft, label, IconRight }: Props) => {
   return (
     <div
       className={cn(
@@ -65,7 +65,7 @@ export const SecondaryButton: React.FC<Props> = ({ className, IconLeft, label, I
   );
 };
 
-export const RainbowDarkButton: React.FC<Props> = ({ className, label, IconRight }) => {
+export const RainbowDarkButton = ({ className, label, IconRight }: Props) => {
   return (
     <div
       className={cn(
