@@ -35,7 +35,11 @@ export async function GET(request: NextRequest) {
 
   // Get base URL from request because Next.js wants it
   const baseUrl = new URL(request.url).origin;
-  const response = NextResponse.redirect(new URL(authResult.redirectTo, baseUrl));
+  console.log("Base URL:", baseUrl);
+
+  const response = NextResponse.redirect(
+    new URL(authResult.redirectTo, baseUrl)
+  );
 
   return await setCookiesOnResponse(response, authResult.cookies);
 }
