@@ -19,21 +19,48 @@
         "noChildrenProp": "off"
       },
       "security": {
-        "noDangerouslySetInnerHtml": "off"
+        "noDangerouslySetInnerHtml": "warn"
       },
       "style": {
+        "useConst": "warn",
         "useBlockStatements": "error",
-        "noNonNullAssertion": "off"
+        "noNonNullAssertion": "warn",
+        "noUselessElse": "warn",
+        "useImportType": "warn",
+        "useFragmentSyntax": "warn",
+        "useDefaultSwitchClause": "warn",
+        "useAsConstAssertion": "warn",
+        "useTemplate": "warn",
+
+        "useNamingConvention": "warn",
+        "noYodaExpression": "warn",
+        "noUnusedTemplateLiteral": "warn",
+        "noNegationElse": "warn",
+        "noImplicitBoolean": "warn",
+        "useSelfClosingElements": "warn",
+        "useShorthandAssign": "warn"
       },
       "performance": {
         "noDelete": "off"
       },
       "suspicious": {
-        "noExplicitAny": "off",
+        "recommended": true,
+        "noDoubleEquals": "warn",
+        "useIsArray": "warn",
+        "useAwait": "warn",
+        "noFallthroughSwitchClause": "warn",
+        "noExplicitAny": "warn",
         "noConsoleLog": "warn"
       },
       "complexity": {
-        "noForEach": "off"
+        "noForEach": "off",
+        "noUselessTernary": "warn",
+        "noUselessTypeConstraint": "warn",
+        "useSimplifiedLogicExpression": "warn",
+        "noUselessStringConcat": "warn",
+        "useOptionalChain": "warn",
+        "useDateNow": "warn",
+        "noExtraBooleanCast": "warn"
       }
     },
     "ignore": [
