@@ -1,0 +1,95 @@
+---
+title: FormSelect
+description: A form component for selecting a value from a list of options.
+---
+
+import {
+ Default,
+ WithDescription,
+ Required,
+ Optional,
+ WithIcon,
+ WithError,
+ Success,
+ Warning,
+ Disabled
+} from "./form/form-select.variants"
+
+# FormSelect
+
+A form component that provides a styled select dropdown field with label, description, and validation states.
+
+## Examples
+
+### Default
+
+<Default />
+
+### With Description
+
+<WithDescription />
+
+### Required
+
+<Required />
+
+### Optional
+
+<Optional />
+
+### With Icon
+
+<WithIcon />
+
+### With Error
+
+<WithError />
+
+### Success
+
+<Success />
+
+### Warning
+
+<Warning />
+
+### Disabled
+
+<Disabled />
+
+
+
+## Props
+
+The FormSelect component extends all props from the underlying Radix UI Select component, with additional form-specific properties: 
+
+<AutoTypeTable
+    name="DocumentedFormSelectProps"
+    path="../../internal/ui/src/components/form/index.tsx"
+/>
+
+## Accessibility
+
+FormSelect is built with accessibility in mind:
+
+- The FormSelect component uses semantic HTML and ARIA attributes to ensure proper accessibility.
+- Labels are properly associated with the select element using `htmlFor` and matching `id` attributes.
+- Error and description messages are linked to the select using `aria-describedby`.
+- Required state is communicated using `aria-required="true"`.
+- Error state is communicated using `aria-invalid="true"`.
+- The component leverages Radix UI's Select component which provides keyboard navigation and focus management.
+- Color is never the only means of conveying information, with text and icons used to reinforce states.
+
+## Best Practices
+
+When using the FormSelect component:
+
+- Always provide a descriptive label for the select to indicate its purpose.
+- Include a helpful description when the selection has important implications or requires explanation.
+- Use the `required` or `optional` props to clearly indicate when a selection is necessary.
+- Group related form selects together for better organization.
+- For selects with many options, consider implementing search functionality or grouping options.
+- When appropriate, provide a default selection to reduce user effort.
+- Use the error state to provide clear, actionable feedback when validation fails.
+- Maintain consistent styling and behavior across all form components in your application.
+- Label option groups clearly if using SelectGroup for categorized options.

@@ -107,7 +107,7 @@ export const IdentifierDialog = ({
           id: overrideDetails.overrideId,
           limit: values.limit,
           duration: values.duration,
-          async: Boolean(overrideDetails.async),
+          async: asyncValue === undefined ? null : asyncValue,
         });
       } else {
         await create.mutateAsync({
